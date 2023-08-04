@@ -1,0 +1,12 @@
+
+.darkInput {
+  border: none !important;
+  &::placeholder {
+    color: #ffffff8c !important;
+  }
+}
+
+.lightInput {
+  border: none !important;
+  border-color: transparent;
+}

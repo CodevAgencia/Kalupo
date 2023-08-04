@@ -1,0 +1,65 @@
+[
+  {
+    "coin": 0,
+    "name": "rinted T-shirt",
+    "value": 12.55,
+    "discount": 12,
+    "image": "/assets/images/products/img.png"
+  },
+  {
+    "coin": 0,
+    "name": "Slub jersey T-shirt\n",
+    "value": 18.70,
+    "discount": 12,
+    "image": "/assets/images/products/img_1.png"
+  },
+  {
+    "coin": 15,
+    "name": "Printed T-shirt",
+    "value": 12.55,
+    "discount": 25,
+    "image": "/assets/images/products/img_2.png"
+  },
+  {
+    "coin": 5,
+    "name": "Printed T-shirt",
+    "value": 166.55,
+    "discount": 8,
+    "image": "/assets/images/products/img_3.png"
+  },
+  {
+    "coin": 0,
+    "name": "Printed T-shirt",
+    "value": 12.55,
+    "discount": 0,
+    "image": "/assets/images/products/img.png"
+  },
+  {
+    "coin": 5,
+    "name": "Printed T-shirt",
+    "value": 166.55,
+    "discount": 8,
+    "image": "/assets/images/products/img_3.png"
+  },
+  {
+    "coin": 0,
+    "name": "Printed T-shirt",
+    "value": 12.55,
+    "discount": 0,
+    "image": "/assets/images/products/img.png"
+  },
+  {
+    "coin": 5,
+    "name": "Printed T-shirt",
+    "value": 166.55,
+    "discount": 8,
+    "image": "/assets/images/products/img_3.png"
+  },
+  {
+    "coin": 0,
+    "name": "Printed T-shirt",
+    "value": 12.55,
+    "discount": 0,
+    "image": "/assets/images/products/img.png"
+  }
+]

@@ -1,0 +1,56 @@
+@import '../../../styles/scss/modules/var';
+@import '../../../styles/scss/modules/mixins';
+
+
+.sheet_content {
+  width: 30rem;
+
+  @include media('sm') {
+    width: 100% !important;
+  }
+
+  @include media('mobile') {
+    width: 24rem;
+  }
+}
+
+.overlay_meny {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  color: #000000;
+
+}
+
+.burger_icon {
+  width: 3em;
+  height: 2.1em;
+}
+
+.close_button {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  z-index: 2;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.menu_links_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.image_profile {
+  width: 8em !important;
+  height: 8em !important;
+  border: 2px #FFF;
+  box-shadow:  0px 3px 3px 0px rgba(0, 0, 0, 0.25);
+}

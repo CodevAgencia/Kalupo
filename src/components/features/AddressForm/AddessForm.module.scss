@@ -1,0 +1,10 @@
+
+.address_form {
+  position: relative;
+  &::after {
+    content: url("/assets/icons/arrow-top-card.svg");
+    position: absolute;
+    top: -19px;
+    left: 9rem;
+  }
+}

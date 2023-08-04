@@ -1,0 +1,12 @@
+@import '../../../styles/scss/modules/var';
+@import '../../../styles/scss/modules/mixins';
+
+.form-login {
+  width: 100%;
+  padding: 25px 50px 50px;
+  overflow: auto;
+
+  @include media('mobile') {
+    padding: 1.5rem;
+  }
+}

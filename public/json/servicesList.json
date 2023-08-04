@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Peluqueria",
+    "summary": "Equilibrio - Razas Pequeñas Adulto, tiene como componentes carne mecánicamente separada de pollo, Harina de menudos de pollo, ",
+    "whatsapp_link": "https://api.whatsapp.com/send?phone=123456789",
+    "image": "https://picsum.photos/200"
+  },
+  {
+    "id": 2,
+    "name": "Guarderia",
+    "summary": "Equilibrio - Razas Pequeñas Adulto, tiene como componentes carne mecánicamente separada de pollo, Harina de menudos de pollo, ",
+    "whatsapp_link": "https://api.whatsapp.com/send?phone=987654321",
+    "image": "https://picsum.photos/200"
+  },
+  {
+    "id": 3,
+    "name": "Hotel",
+    "summary": "Equilibrio - Razas Pequeñas Adulto, tiene como componentes carne mecánicamente separada de pollo, Harina de menudos de pollo, ",
+    "whatsapp_link": "https://api.whatsapp.com/send?phone=987654321",
+    "image": "https://picsum.photos/200"
+  }
+]

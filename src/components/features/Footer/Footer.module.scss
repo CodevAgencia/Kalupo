@@ -1,0 +1,50 @@
+@import '../../../styles/scss/modules/var';
+@import '../../../styles/scss/modules/mixins';
+
+.footer {
+  position: relative;
+  width: 100%;
+
+ 
+
+  .container {
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url('/assets/images/footer-vet-blue.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-image: url('/assets/images/footer-vet-white.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    top: 1.5px;
+    z-index: -1;
+  }
+
+  .logo_footer {
+    width: 9.5em;
+
+    @include media('mobile') {
+      max-width: 18em !important;
+    }
+  }
+
+  .payments_metods {
+    width: 16.3em !important;
+    height: 3.37em !important;
+  }
+}

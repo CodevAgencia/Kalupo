@@ -1,0 +1,91 @@
+@import '../../../styles/scss/modules/_var.scss';
+@import '../../../styles/scss/modules/mixins';
+
+.CardService {
+  width: 45%;
+
+  & > div:first-of-type {
+    & > div {
+      & > p {
+        font-size: 0.9rem;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include media('md') {
+  .CardService {
+    width: 100%;
+  }
+}
+
+@include media('xs') {
+  .CardService {
+    width: 100%;
+
+    & > div:first-of-type {
+      & > div {
+        & > h1 {
+          font-size: 0.8rem;
+
+          & > span {
+            font-size: 0.8rem;
+          }
+        }
+        & > p {
+          font-size: 0.6rem;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include media('sm') {
+  .CardService {
+    width: 100%;
+
+    & > div:first-of-type {
+      & > div {
+        & > h1 {
+          font-size: 1rem;
+
+          & > span {
+            font-size: 1rem;
+          }
+        }
+
+        & > p {
+          font-size: 0.8rem;
+          @include text-lines();
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include media('mobile') {
+  .CardsServices {
+    & > section {
+      width: 95%;
+
+      & > section {
+        gap: 10px;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  .CardService {
+    width: 48%;
+    margin: 0;
+
+    & > div:first-of-type {
+      & p {
+        @include text-lines(4);
+      }
+    }
+  }
+}

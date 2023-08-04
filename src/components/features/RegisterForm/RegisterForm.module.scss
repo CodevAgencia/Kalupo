@@ -1,0 +1,36 @@
+@import '../../../styles/scss/modules/var';
+@import '../../../styles/scss/modules/mixins';
+
+.form-register {
+  width: 100%;
+  padding: 25px 50px 50px;
+  overflow: auto;
+
+  @include media ('mobile') {
+    padding: 25px 1.5rem 50px;
+  }
+}
+
+
+.accept-terms {
+  text-decoration: underline;
+}
+
+
+.checkbox {
+  outline: none;
+  width: 1.5em !important;
+  height: 1.5em !important;
+}
+
+.checkbox:focus, .checkbox-terms:focus {
+  outline: none;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+}
+
+.checkbox-terms {
+  
+  width: 2.6em !important;
+  height: 2rem;
+}

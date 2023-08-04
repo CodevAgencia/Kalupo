@@ -1,0 +1,20 @@
+[
+  {
+    "id": "0",
+    "name": "Juan",
+    "last_name": "Pérez",
+    "email": "juan.perez@example.com",
+    "address": "Calle Principal, 123",
+    "indicative_phone": "+57",
+    "phone": "3212345678"
+  },
+  {
+    "id": "1",
+    "name": "María",
+    "last_name": "Gómez",
+    "email": "maria.gomez@example.com",
+    "address": "Avenida Central, 456",
+    "indicative_phone": "+507",
+    "phone": "6789012345"
+  }
+]

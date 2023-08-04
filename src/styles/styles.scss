@@ -1,0 +1,144 @@
+@import 'scss/partial/fonts';
+@import 'scss/partial/typography';
+@import 'scss/modules/var';
+@import 'scss/modules/mixins';
+
+
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb:0,0,0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --background: 0 0% 100%;
+  --foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 47.4% 11.2%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 47.4% 11.2%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --primary: 210, 100%, 60%;
+  --primary-foreground: 210 50% 90%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 215 20.2% 65.1%;
+  --radius: 0.5rem;
+}
+.dark {
+  --background: 224 71% 4%;
+  --foreground: 213 31% 91%;
+  --muted: 223 47% 11%;
+  --muted-foreground: 215.4 16.3% 56.9%;
+  --popover: 224 71% 4%;
+  --popover-foreground: 215 20.2% 65.1%;
+  --card: 224 71% 4%;
+  --card-foreground: 213 31% 91%;
+  --border: 216 34% 17%;
+  --input: 216 34% 17%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 1.2%;
+  --secondary: 222.2 47.4% 11.2%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 216 34% 17%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 216 34% 17%;
+  --radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb:253,253,253;
+    --background-end-rgb:253,253,253;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  @apply bg-background text-foreground; font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+
+.max-width130{
+  max-width: 1200px;
+}
+.bg-custom-footer {
+  position: relative;
+}
+
+
+.container {
+  padding: 0 1.5rem;
+  max-width: 1444px;
+  margin: 0 auto;
+  @include media('mobile') {
+    padding: 0 1rem;
+  }
+}
+
+.dialog-overlay {
+  background: rgba(0 0 0 / 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+}
+
+.dialog-content {
+  width: 100%;
+  min-width: 300px;
+  background: transparent;
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.backdrop-blur-sm  {
+  background: rgba(0 0 0 / 0.5);
+  backdrop-filter: none;
+}
+
+
+.image-container {  
+  & > div {
+    position: unset !important;
+  }
+
+  .image-responsive {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    position: relative !important;
+    height: unset !important;
+  }
+}

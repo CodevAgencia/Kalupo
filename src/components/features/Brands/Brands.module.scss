@@ -1,0 +1,17 @@
+.brands {
+  width: 100%;
+  font-size: 1rem;
+  .carousel {
+    width: 100%;
+
+    ul {
+      // display: flex;
+      // gap: 1rem;
+    }
+  }
+
+  .imageItem {
+    height: 11.8em !important;
+    width: 11.8em !important;
+  }
+}

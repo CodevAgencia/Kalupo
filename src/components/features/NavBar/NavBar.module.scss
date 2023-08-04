@@ -1,0 +1,65 @@
+@import '../../../styles/scss/modules/var';
+@import '../../../styles/scss/modules/mixins';
+
+.nav-bar {
+  background-color: #3399FF;
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25);  
+  font-size: 0.8rem;
+  
+  @include media ('mobile') {
+    font-size: .7rem;
+  }
+
+  @include media ('sm') {
+    font-size: .6rem;
+  }
+
+  & > div {
+    height: 6.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo_contianer {
+    padding-left: 1rem;
+  }
+
+  .logo_tipo {
+    width: 12.8em;
+    height: 4.81em;
+  }
+
+  .cart_product {
+    width: 4.4em;
+    height: 3.81em;
+  }
+
+ 
+
+  .nav_links {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu_session {
+    width: 25em !important;
+  }
+
+  .menu_position {
+    right: -50%;
+    cursor: auto !important;
+  }
+
+  .menu_button {
+    height: 3.12em;
+    min-width: 12.5em;
+  }
+
+  .account {
+    height: 2.5em;
+    width: 2.5em;
+  }
+
+  
+}

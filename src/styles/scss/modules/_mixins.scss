@@ -1,0 +1,109 @@
+$grid-breakpoints: (
+  xxs: 0,
+  xs: 320px,
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+);
+
+$container-max-widths: (
+  xs: 480px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1440px,
+);
+
+$breakpoints: (
+  'desktop': (
+    min-width: 1024px,
+  ),
+  'mobile': (
+    max-width: 1023px,
+  ),
+  'xs': (
+    max-width: 319px,
+  ),
+  'sm': (
+    max-width: 500px,
+  ),
+  'md': (
+    max-width: 767px,
+  ),
+  'lg': (
+    max-width: 1023px,
+  ),
+  'lg+': (
+    min-width: 1024px,
+  ),
+) !default;
+
+@mixin media($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and #{ inspect(map-get($breakpoints,
+		$breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn 'valor no recibido o no coicide con `#{$breakpoint}`. ';
+  }
+}
+
+@mixin scroll-config($width) {
+  ::-webkit-scrollbar {
+    background-color: transparent;
+    cursor: pointer;
+    width: $width;
+
+    &:hover {
+      background-color: rgba(248, 248, 248, 0.1);
+    }
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba($color: $gray-3, $alpha: 0.3);
+    border-radius: $width;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin scroll-config-firefox {
+  scrollbar-width: thin;
+}
+
+@mixin only-lg-inline {
+  @include media('lg') {
+    display: inline-block;
+  }
+
+  @include media('md') {
+    display: none;
+  }
+
+  @include media('sm') {
+    display: none;
+  }
+
+  @include media('xs') {
+    display: none;
+  }
+}
+
+@mixin body-2 {
+  font-family: $raleway-medium;
+  font-size: 16px;
+
+  @include media('md') {
+    font-size: 14px;
+  }
+}
+
+@mixin text-lines($number-of-line: 3) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $number-of-line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

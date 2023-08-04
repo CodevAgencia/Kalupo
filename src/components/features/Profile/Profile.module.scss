@@ -1,0 +1,65 @@
+@import '../../../styles/scss/modules/_var.scss';
+@import '../../../styles/scss/modules/mixins';
+@import '../../../styles/scss/partial/fonts';
+
+.darkInput {
+  border: none !important;
+  &::placeholder {
+    color: #ffffff8c !important;
+  }
+}
+
+.lightInput {
+  border: none !important;
+}
+
+.containerForm {
+  & > section {
+    & > span {
+      margin-top: 5px;
+      color: red;
+
+      &::before {
+        content: '*';
+      }
+    }
+
+    & > section {
+      & > span {
+        margin-top: 5px;
+        color: red;
+
+        &::before {
+          content: '*';
+        }
+      }
+    }
+
+    & > label {
+      font-style: normal;
+      line-height: 19px;
+      letter-spacing: 0.05em;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.ChangePasswordForm {
+  & > section {
+    & label {
+      margin: 8px 0 5px 0;
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+      line-height: 19px;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  & span {
+    color: red;
+    &::before {
+      content: '*';
+    }
+  }
+}

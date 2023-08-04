@@ -1,0 +1,26 @@
+
+.darkInput, .lightInput {
+  box-shadow: none !important;
+}
+.darkInput {
+  border: none !important;
+
+  span {
+    white-space: nowrap;
+    text-overflow: ellipsis !important;
+    overflow: hidden;
+  }
+
+  &::placeholder {
+    color: #ffffff8c !important;
+  }
+}
+
+.lightInput {
+  border: none !important;
+
+  // color: #000000 !important;
+  &::placeholder {
+    color: #ffffff8c !important;
+  }
+}

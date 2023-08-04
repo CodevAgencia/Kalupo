@@ -1,0 +1,123 @@
+# Default values for deployment, this is necessary because we're using a unified helm subchart
+deployment:
+
+  # The minimum/default number of pods to run
+  replicaCount: 2
+
+  # This is the name of the deployment, this is used in a _lot_ of places in the helm charts so lets just specify it
+  name: kalupo-ecommerce
+
+  # Pods per node
+  maxPodsPerNode: 2
+
+  # What group we're in in gitlab and what namespace we deploy to in kubernetes
+  #image:
+    #repository: ""
+    #imagePullPolicy: Always
+    # This is for testing things, uncomment the next two lines
+    # command: ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+    # args: ["-c", "while true; do echo hello; sleep 10;done"]
+
+  initContainers:
+    - name: backend-db-migrations
+      image: '207909261677.dkr.ecr.us-east-1.amazonaws.com/kalupo/kalupowebcommerce'
+      #command: ["sh", "-c", "npx prisma generate && npx prisma migrate deploy"]
+      env:
+        # - name: POSTGRES_URL
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: shared-db-aurorav2
+        #       key: hostname        
+        # - name: POSTGRES_DATABASE
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: shared-db-aurorav2
+        #       key: database
+        # - name: POSTGRES_PASSWORD
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: shared-db-aurorav2
+        #       key: password
+        # - name: POSTGRES_PORT
+        #   value: "5432"
+        # - name: POSTGRES_USER
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: shared-db-aurorav2
+        #       key: username
+        # - name: DATABASE_URL
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: shared-db-aurorav2-postgresuri
+        #       key: postgres-uri
+        - name: APP_SECRET
+          value: "UQBNabePDFc39CrAE8M8"
+        - name: PORT
+          value: "3000" 
+  # This service listens on port 3000
+  service:
+    targetPort: 3000
+
+  ingress:
+    enabled: true
+
+  # livenessProbes are used to determine when to restart a container
+  # Only specify the values you need to override from the defaults
+  livenessProbe:
+    enabled: true
+    probeType: tcpSocket
+
+  # readinessProbes are used to determine when a container is ready to start accepting traffic
+  # Only specify the values you need to override from the defaults
+  readinessProbe:
+    enabled: true
+    probeType: tcpSocket
+
+  # This MUST be enabled for consul to work properly
+  serviceAccount:
+    enabled: true
+
+  globalEnvs:    
+    - name: POSTGRES_URL
+      valueFrom:
+        secretKeyRef:
+          name: shared-db-aurorav2
+          key: hostname        
+    - name: POSTGRES_DATABASE
+      valueFrom:
+        secretKeyRef:
+          name: shared-db-aurorav2
+          key: database
+    - name: POSTGRES_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: shared-db-aurorav2
+          key: password
+    - name: POSTGRES_PORT
+      value: "5432"
+    - name: POSTGRES_USER
+      valueFrom:
+        secretKeyRef:
+          name: shared-db-aurorav2
+          key: username
+    - name: DATABASE_URL
+      valueFrom:
+        secretKeyRef:
+          name: shared-db-aurorav2-postgresuri
+          key: postgres-uri
+    - name: APP_SECRET
+      value: "UQBNabePDFc39CrAE8M8"
+    - name: PORT
+      value: "3000" 
+
+  # deployment container resource requests/limits
+  # this is set VERY low by default, to be aggressive above resource limiting, please override this if necessary
+  # Note: Limits are HARD Limits
+  # Requests are "soft" limits and are what affects HPA (autoscaling) aggressiveness if HPA is enabled
+  resources:
+    limits:
+     cpu: 100m
+     memory: 500Mi
+    requests:
+     cpu: 20m
+     memory: 200Mi
