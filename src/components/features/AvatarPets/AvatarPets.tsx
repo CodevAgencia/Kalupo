@@ -2,7 +2,7 @@ import Avatar from "@/components/ui/avatar"
 import styles from './AvatarPets.module.scss'
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css";
-import React, {FC} from "react";
+import React, { FC } from "react";
 
 interface AvatarPetsProps {
   pets: {
@@ -10,7 +10,7 @@ interface AvatarPetsProps {
     name: string
     url: string
   }[],
-  onClick: (id:string) => void
+  onClick: (id: string) => void
 }
 
 const responsive = {
@@ -33,29 +33,29 @@ const responsive = {
   }
 };
 
-export const AvatarPets:FC <AvatarPetsProps> = ({onClick, pets}) => {
+export const AvatarPets: FC<AvatarPetsProps> = ({ onClick, pets }) => {
 
   return (
     <div className="flex gap-5">
       <Carousel
-          responsive={responsive}
-          containerClass={styles.carousel}
-          itemClass="image-container"
-          autoPlay arrows={true}
-        >
-          {
-            pets.map((pet) => (
-              <div key={pet.id} className='flex flex-col justify-center items-center gap-1'>
-                <Avatar
-                  className={`border-3 h-24 w-24 ${styles.avatar_pet}`}
-                  onClick={() => onClick(pet.id)}
-                  src={pet.url} alt='sss'
-                />
-                <span>{pet.name}</span>
-              </div>
-            ))
-          }
-        </Carousel>
+        responsive={responsive}
+        containerClass={styles.carousel}
+        itemClass="image-container"
+        autoPlay arrows={true}
+      >
+        {pets ? pets.map((pet) => (
+          <div key={pet.id} className='flex flex-col justify-center items-center gap-1'>
+            <Avatar
+              className={`border-3 h-24 w-24 ${styles.avatar_pet}`}
+              onClick={() => onClick(pet.id)}
+              src={pet.url} alt='sss'
+            />
+            <span>{pet.name}</span>
+          </div>
+        ))
+          : <></>
+        }
+      </Carousel>
     </div>
   )
 }

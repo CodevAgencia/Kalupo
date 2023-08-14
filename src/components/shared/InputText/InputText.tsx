@@ -1,7 +1,7 @@
 import { Input } from '@/components/ui/input';
 import { useField } from 'formik';
-import React, {FC} from "react";
-import {Label} from "@/components/ui/label";
+import React, { FC } from "react";
+import { Label } from "@/components/ui/label";
 interface InputTextProps {
   name: string;
   placeholder?: string;
@@ -27,7 +27,7 @@ export const InputText: FC<InputTextProps> = ({
 
   return (
     <>
-      { label ? <Label htmlFor={name}>{label}</Label> : null}
+      {label ? <Label htmlFor={name}>{label}</Label> : null}
       <Input
         name={name}
         className={`
